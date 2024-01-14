@@ -26,9 +26,9 @@ def get_db_session():
 
 # Оголошення CRUD операцій
 app.post("/api/v1/contacts/", response_model=ContactCreate)(create_contact)
-app.get("/api/v1/contacts/", response_model=Dict[str, src.schemas.ContactResponse])(get_contacts)
-app.get("/api/v1/contacts/{contact_id}", response_model=Contact)(get_contact_by_id)
-app.put("/api/v1/contacts/{contact_id}", response_model=ContactCreate)(update_contact)
+app.get("/api/v1/contacts/", response_model=List[src.schemas.ContactResponse])(get_contacts)
+app.get("/api/v1/contacts/{contact_id}", response_model=src.schemas.ContactResponse)(get_contact_by_id)
+app.put("/api/v1/contacts/{contact_id}", response_model=ContactCreate, response_model_exclude_unset=True)(update_contact)
 app.delete("/api/v1/contacts/{contact_id}", response_model=None)(delete_contact)
 
 if __name__ == "__main__":
