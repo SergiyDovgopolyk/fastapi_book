@@ -1,6 +1,6 @@
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from src.database.models import Contact
+from src.models.base import Contact
 from src.database.db import get_db
 
 

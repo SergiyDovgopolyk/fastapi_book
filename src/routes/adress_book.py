@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from datetime import date, timedelta
-from src.database.models import Contact
+from src.models.base import Contact
 from src.database.db import get_db
-from src.schemas import ContactCreate  # Додано імпорт схеми
+from src.schemas.schemas import ContactCreate  # Додано імпорт схеми
 
 router = APIRouter()
 

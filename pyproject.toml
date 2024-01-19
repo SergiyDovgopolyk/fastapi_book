@@ -13,6 +13,7 @@ sqlalchemy = "^2.0.25"
 psycopg2 = "^2.9.9"
 alembic = "^1.13.1"
 pydantic = {extras = ["email"], version = "^2.5.3"}
+fastapi-sso = "^0.10.0"
 
 
 [build-system]

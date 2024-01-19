@@ -1,12 +1,16 @@
 from sqlalchemy import Column, Integer, String, Date
-from sqlalchemy.ext.declarative import declarative_base
+# from database.db import Base
 from sqlalchemy.orm import DeclarativeBase
-from .db import engine  # Оновлено імпорт
+
 
 class Base(DeclarativeBase):
     pass
 
-# Base = declarative_base()
+
+class BaseModel(Base):
+    __abstract__ = True
+    id = Column(Integer, primary_key=True, index=True)
+
 
 class Contact(Base):
     __tablename__ = "contacts"
